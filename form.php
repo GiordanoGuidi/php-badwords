@@ -1,6 +1,8 @@
 <?php
 $paragraph=$_GET['paragraph'];
-$badwords=$_GET['badwords']
+$badwords=$_GET['badwords'];
+$trimparagraph=trim($paragraph);
+$newparagraph= str_replace($badwords,'***',$trimparagraph);
 
 ?>
 
@@ -15,7 +17,8 @@ $badwords=$_GET['badwords']
 </head>
 <body>
     <p><?= $paragraph ?></p>
-    <p><?= strlen(trim($paragraph))?></p>
-    
+    <p><?= strlen($trimparagraph)?></p>
+    <p><?= $newparagraph?></p>
+    <p><?=strlen($newparagraph) ?></p>
 </body>
 </html>
